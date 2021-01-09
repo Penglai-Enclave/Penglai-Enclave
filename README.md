@@ -31,7 +31,43 @@ We highlight several features on Penglai which are novel over other TEE systems.
 
 ### Cross-enclave communication
 
-TODO
+Penglai supports the synchronous and asynchronous cross-enclave communication using the zero-copy memory transferring mechanism.
+
+##### Synchronous IPC interface:
+
+```c
+struct call_enclave_arg_t
+{
+  unsigned long req_arg;
+  unsigned long resp_val;
+  unsigned long req_vaddr;
+  unsigned long req_size;
+  unsigned long resp_vaddr;
+  unsigned long resp_size;
+};
+
+unsigned long acquire_enclave(char* name);;
+unsigned long call_enclave(unsigned long handle, struct call_enclave_arg_t* arg);
+void SERVER_RETURN(struct call_enclave_arg_t *arg);
+```
+
+As for synchronous cross-enclave communication, Penglai sdk provides three IPC-related interfaces: `acquire_enclave`, `call_enclave` and `SERVER_RETURN`. 
+
++ `Acquire_enclave` receives the callee enclave name and returns the corresponding enclave handler. 
+
++ `Call_enclave` has two parameters, one is the enclave handler, and another is the argument's structure: `struct call_enclave_arg_t`. `struct call_enclave_arg_t` contains six variables: `req_arg` and `resp_val` are the calling and return value passing by the register. `req_size` and `req_vaddr` indicate a memory range that will map to the callee enclave using the zero-copy mechanism. `resp_size` and `resp_vaddr` are similar to the `req_size` and `req_vaddr`,  which are ignored in the calling procedure, but will be filled by monitor in the return procedure.
+
+  Call_enclave will be hanged until the calling procedure returns.
+
++ `SERVER_RETURN` also receives the `struct call_enclave_arg_t`, which indicates the `resp_size` and `resp_vaddr`.
+
+Asynchronous IPC interface:
+
+```c
+unsigned long asyn_enclave_call(char* name, struct call_enclave_arg_t *arg);
+```
+
+`asyn_enclave_call` receives two parameters, one is the callee enclave name and another is the pointer of the `struct call_enclave_arg_t`, but only the req_vaddr and `req_size` are effective. When an enclave invokes the `asyn_enclave_call`, Penglai monitor will unmap these memory pages, and re-map them to the callee enclave before it running. In addition, asyn_enclave_call will not suspend the caller enclave procedure.
 
 ### Secure file system
 
