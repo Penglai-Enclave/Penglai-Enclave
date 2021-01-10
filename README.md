@@ -162,9 +162,9 @@ Penglai utilizes the mbedtls as its encryption library.
 
 Mbed TLS is a C library that implements cryptographic primitives, X.509 certificate manipulation and the SSL/TLS and DTLS protocols. Its small code footprint makes it suitable for embedded systems. And Mbed TLS includes a reference implementation of the PSA Cryptography API.
 
-You can find the basic doc tutorial in mbedtls/docs. And if you wnat to get more specific API documents, you can use docxgen engine to generate the API documents. The doxygen file is located at mbedtls/doxygen.
+You can find the basic doc tutorial in mbedtls/docs. And if you want to get more specific API documents, you can use doxygen engine to generate the API documents. The doxygen file is located at mbedtls/doxygen.
 
-The implementation of mbedtls is very flexible and very easy to port to different platform. You can modify the configurations in mbedtls/include/mbedtls/config.h to adapt to the library to your platform.
+The implementation of mbedtls is very flexible and very easy to port to different platforms. You can modify the configurations in mbedtls/include/mbedtls/config.h to adapt to the library to your platform.
 
 
 
