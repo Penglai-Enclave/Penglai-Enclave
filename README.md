@@ -1,4 +1,4 @@
-![Penglai logo](docs/images/penglai_logo.jpg)
+<img src="docs/images/penglai_logo.jpg" width="200">
 
 Penglai is a set of security solutions based on Trusted Execution Environment.
 
@@ -12,8 +12,7 @@ Penglai contains a set of systems satisfying different scenarios.
 
 - **Penglai-TVM**: it is based on OpenSBI, supports fine-grained isolation (page-level isolation) between untrusted host and enclaves. The code is maintained in [Penglai-TVM](#).
 - **Penglai-MCU**: it supports Global Platform, and PSA now. Not open-sourced. Refer [Penglai-MCU](#) for more info.
-- **Penglai-sPMP** based on OpenSBI for Nuclei devices is maintained in [Nuclei SDK](https://github.com/Nuclei-Software/nuclei-linux-sdk/tree/dev_flash_penglai_spmp).
-- **Penglai-sPMP**: it utilizes our sPMP proposal to provide basic enclave functionalities, based on old bbl. The prototype is avaialble [here](https://github.com/Penglai-Enclave/Penglai-Enclave-sPMP).
+- **Penglai-sPMP**: it utilizes our sPMP (S-mode PMP) proposal to provide basic enclave functionalities. A version based on OpenSBI for Nuclei devices is maintained in [Nuclei SDK](https://github.com/Nuclei-Software/nuclei-linux-sdk/tree/dev_flash_penglai_spmp). Another prototype based on old BBL (with QEMU) is avaialble [here](https://github.com/Penglai-Enclave/Penglai-Enclave-sPMP).
 
 
 ## Formal verification
@@ -51,9 +50,9 @@ unsigned long call_enclave(unsigned long handle, struct call_enclave_arg_t* arg)
 void SERVER_RETURN(struct call_enclave_arg_t *arg);
 ```
 
-As for synchronous cross-enclave communication, Penglai sdk provides three IPC-related interfaces: `acquire_enclave`, `call_enclave` and `SERVER_RETURN`. 
+As for synchronous cross-enclave communication, Penglai sdk provides three IPC-related interfaces: `acquire_enclave`, `call_enclave` and `SERVER_RETURN`.
 
-+ `Acquire_enclave` receives the callee enclave name and returns the corresponding enclave handler. 
++ `Acquire_enclave` receives the callee enclave name and returns the corresponding enclave handler.
 
 + `Call_enclave` has two parameters, one is the enclave handler, and another is the argument's structure: `struct call_enclave_arg_t`. `struct call_enclave_arg_t` contains six variables: `req_arg` and `resp_val` are the calling and return value passing by the register. `req_size` and `req_vaddr` indicate a memory range that will map to the callee enclave using the zero-copy mechanism. `resp_size` and `resp_vaddr` are similar to the `req_size` and `req_vaddr`,  which are ignored in the calling procedure, but will be filled by monitor in the return procedure.
 
@@ -130,7 +129,7 @@ int EAPP_ENTRY main(){
         eapp_print("open file failed, directory does not exist\n");
         if(mkdir("/sub", 0) != 0){
             eapp_print("mkdir failed\n");
-            EAPP_RETURN(0);  
+            EAPP_RETURN(0);
         }
     }
     f = fopen("/sub/empty.txt","w");
