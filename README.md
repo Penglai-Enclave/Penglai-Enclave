@@ -16,13 +16,27 @@ Penglai contains a set of systems satisfying different scenarios.
 
 
 ## Formal verification
+Formally verify Penglai's secure monitor is very necessary since it is the software TCB. 
 
-We have built a framework, Pangolin, based on Serval, to formally verify the Penglai's secure monitor.
+We tried our best to make the verified Penglai's secure monitor consistent with the unverified version. Because we want Penglai's secure monitor to have exciting features and excellent performance while still providing rigorous security guarantee.
 
+We have built a framework, **Pangolin**, based on Serval, to formally verify the Penglai's secure monitor.
+
+### Design of verification of Penglai
+We leverage model checking and symbolic execution to proof the functional correctness of Penglai's secure monitor.
+
+Below is a simplified design of Pangolin, the framework of Penglai's verification.
+
+<center> 
+<img src="docs/images/pangolin-design.png" width="500"> 
+</center>
+
+### Proceedings
 We have finished:
 
 - The specifications on cross-enclave communication interfaces, i.e., acquire\_server\_enclave, enclave\_call, and enclave\_return.
 - Code proof of the above three interfaces using refinement.
+
 
 ## Features
 
