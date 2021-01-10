@@ -15,29 +15,6 @@ Penglai contains a set of systems satisfying different scenarios.
 - **Penglai-sPMP**: it utilizes our sPMP (S-mode PMP) proposal to provide basic enclave functionalities. A version based on OpenSBI for Nuclei devices is maintained in [Nuclei SDK](https://github.com/Nuclei-Software/nuclei-linux-sdk/tree/dev_flash_penglai_spmp). Another prototype based on old BBL (with QEMU) is avaialble [here](https://github.com/Penglai-Enclave/Penglai-Enclave-sPMP).
 
 
-## Formal verification
-Formally verify Penglai's secure monitor is very necessary since it is the software TCB. 
-
-We tried our best to make the verified Penglai's secure monitor consistent with the unverified version. Because we want Penglai's secure monitor to have exciting features and excellent performance while still providing rigorous security guarantee.
-
-We have built a framework, **Pangolin**, based on Serval, to formally verify the Penglai's secure monitor.
-
-### Design of verification of Penglai
-We leverage model checking and symbolic execution to proof the functional correctness of Penglai's secure monitor.
-
-Below is a simplified design of Pangolin, the framework of Penglai's verification.
-
-<center> 
-<img src="docs/images/pangolin-design.png" width="500"> 
-</center>
-
-### Proceedings
-We have finished:
-
-- The specifications on cross-enclave communication interfaces, i.e., acquire\_server\_enclave, enclave\_call, and enclave\_return.
-- Code proof of the above three interfaces using refinement.
-
-
 ## Features
 
 We highlight several features on Penglai which are novel over other TEE systems.
