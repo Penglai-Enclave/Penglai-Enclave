@@ -1,8 +1,4 @@
-<p align="center">
-  <h1>Penglai</h1><br>
-  <br>
-  <img src="docs/images/Penglai-Logo-v2.png" width="200">
-</p>
+<img src="docs/images/penglai_logo.jpg" width="500">
 
 Penglai is a set of security solutions based on Trusted Execution Environment.
 
