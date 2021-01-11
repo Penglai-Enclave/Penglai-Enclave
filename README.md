@@ -1,4 +1,4 @@
-<img src="docs/images/penglai_logo.jpg" width="500">
+<img src="docs/images/Penglai-Logo-v2.png" width="500">
 
 Penglai is a set of security solutions based on Trusted Execution Environment.
 
@@ -149,7 +149,9 @@ int EAPP_ENTRY main(){
 
 ### Encryption library in SDK
 
-Penglai utilizes the mbedtls as its encryption library.
+Penglai supports national secret algorithm like **SM4**.
+
+Besides, Penglai utilizes the mbedtls to provide other crypto algorithm support.
 
 Mbed TLS is a C library that implements cryptographic primitives, X.509 certificate manipulation and the SSL/TLS and DTLS protocols. Its small code footprint makes it suitable for embedded systems. And Mbed TLS includes a reference implementation of the PSA Cryptography API.
 
