@@ -10,7 +10,7 @@ It currently supports RISC-V platforms, including both high-performant MMU RISC-
 
 Penglai contains a set of systems satisfying different scenarios.
 
-- **Penglai-TVM**: it is based on OpenSBI, supports fine-grained isolation (page-level isolation) between untrusted host and enclaves. The code is maintained in [Penglai-TVM](#).
+- **Penglai-TVM**: it is based on OpenSBI, supports fine-grained isolation (page-level isolation) between untrusted host and enclaves. The code is maintained in [Penglai-TVM](https://github.com/Penglai-Enclave/Penglai-Enclave-TVM).
 - **Penglai-MCU**: it supports Global Platform, and PSA now. Not open-sourced. Refer [Penglai-MCU](#) for more info.
 - **Penglai-sPMP**: it utilizes our sPMP (S-mode PMP) proposal to provide basic enclave functionalities. A version based on OpenSBI for Nuclei devices is maintained in [Nuclei SDK](https://github.com/Nuclei-Software/nuclei-linux-sdk/tree/dev_flash_penglai_spmp). Another prototype based on old BBL (with QEMU) is avaialble [here](https://github.com/Penglai-Enclave/Penglai-Enclave-sPMP).
 
