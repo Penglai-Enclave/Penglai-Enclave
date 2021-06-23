@@ -6,6 +6,8 @@ This repo contains an overview of the whole project.
 
 It currently supports RISC-V platforms, including both high-performant MMU RISC-V64 arch and MCU (RISC-V32, no MMU).
 
+More informations can be found in our online document: [Penglai-doc](https://penglai-doc.readthedocs.io/en/latest/)
+
 ## Systems
 
 Penglai contains a set of systems satisfying different scenarios.
