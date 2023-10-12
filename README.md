@@ -14,8 +14,11 @@ Penglai contains a set of systems satisfying different scenarios.
 
 - **[Penglai-TVM](https://github.com/Penglai-Enclave/Penglai-Enclave-TVM)**: it is based on OpenSBI, supports fine-grained isolation (page-level isolation) between untrusted host and enclaves. The code is maintained in [Penglai-TVM](https://github.com/Penglai-Enclave/Penglai-Enclave-TVM).
 - **[Penglai-sPMP](https://github.com/Penglai-Enclave/Penglai-Enclave-sPMP)**: it utilizes PMP or sPMP (S-mode PMP) to provide basic enclave functionalities. A version based on OpenSBI for Nuclei devices is maintained in [Nuclei SDK](https://github.com/Nuclei-Software/nuclei-linux-sdk/tree/dev_flash_penglai_spmp).
+- **[Penglai-Zone](https://github.com/Penglai-Enclave/PenglaiZone)**: PenglaiZone is a project that aims to support the privileged zone in Trusted Execution Environment (TEE), such as TEEOS, standaloneMM in Unified Extensible Firmware Interface (UEFI). The code is maintained in [Penglai-Zone](https://github.com/Penglai-Enclave/PenglaiZone).
 - **Penglai-MCU**: it supports Global Platform, and PSA now. Not open-sourced. Refer [Penglai-MCU](#) for more info.
 
+## Monthly Report
+Monthly update reports for Penglai TEE (include Penglai-sPMP, Penglai-TVM and Penglai-Zone) can be obtained [here](https://github.com/Penglai-Enclave/Penglai-Enclave/tree/main/report).
 
 ## Features
 
